@@ -1,0 +1,202 @@
+/* Leonida Platinum Guide — layout. Theme colours live in theme.css. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+h1, h2, h3, .header-count, .trophy-name {
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+}
+.site-header {
+  border-bottom: 2px solid var(--accent);
+  padding: 16px 20px 0;
+  background: var(--panel);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.site-header h1 { margin: 0; font-size: 30px; }
+.subtitle { margin: 4px 0 10px; color: var(--muted); max-width: 720px; }
+.header-side { text-align: right; }
+.header-count { font-size: 26px; margin: 0; }
+.header-count.done { color: var(--accent); }
+nav {
+  display: flex;
+  gap: 4px;
+  max-width: 1180px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+nav a {
+  padding: 8px 14px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px 6px 0 0;
+}
+nav a.active { background: var(--bg); font-weight: 700; border-bottom: 2px solid var(--accent); }
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+}
+footer {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 20px 32px;
+  color: var(--muted);
+  font-size: 13px;
+}
+button, select, input[type="search"], input[type="text"], textarea {
+  font: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  padding: 6px 10px;
+}
+button { cursor: pointer; }
+button:hover, nav a:hover { border-color: var(--accent); }
+a { color: var(--accent); }
+kbd {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 5px;
+  background: var(--panel);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.toolbar input[type="search"] { flex: 1 1 260px; }
+.toolbar label { display: flex; align-items: center; gap: 6px; }
+.import-btn { cursor: pointer; }
+.import-btn input[type="file"] { display: none; }
+.summary { color: var(--muted); margin: 4px 0 12px; }
+
+/* Checklist two-column layout */
+.columns { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .columns { grid-template-columns: 1fr; } }
+.trophy-list { display: flex; flex-direction: column; gap: 6px; }
+.trophy-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+}
+.trophy-row.selected { border-color: var(--accent); }
+.trophy-row.earned { opacity: 0.75; }
+.trophy-row input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; flex: none; }
+.trophy-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  cursor: pointer;
+}
+.trophy-name { font-size: 17px; font-weight: 700; }
+.trophy-desc { color: var(--muted); font-size: 14px; }
+.trophy-tags { color: var(--muted); font-size: 12px; }
+.mark {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 1px;
+}
+.mark-platinum { background: #d8e1ea; color: #1d2129; }
+.mark-gold { background: #d4af5a; color: #241d05; }
+.mark-silver { background: #aeb6bf; color: #1d2129; }
+.mark-bronze { background: #c98b5e; color: #241407; }
+.empty { color: var(--muted); }
+
+/* Guide pane */
+.guide-pane {
+  position: sticky;
+  top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 16px;
+}
+.guide-pane h2 { margin-top: 0; }
+.pane-hint { color: var(--muted); }
+.guide-meta { color: var(--muted); font-size: 13px; }
+.official-desc { font-style: italic; }
+.guide-text { font-size: 16px; }
+.missable-note {
+  background: var(--warn-bg);
+  border-left: 4px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.honest { color: var(--muted); font-size: 13px; }
+.button-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Detail page */
+.detail { max-width: 780px; }
+.detail-head { display: flex; gap: 10px; align-items: center; }
+.detail-head h2 { margin: 0; font-size: 28px; }
+.detail textarea { width: 100%; }
+.detail-nav { display: flex; justify-content: space-between; gap: 12px; }
+
+/* Roadmap / missables / planner */
+.page-intro { font-size: 16px; max-width: 780px; }
+.stage { margin-bottom: 24px; }
+.progress-bar {
+  height: 10px;
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 560px;
+}
+.progress-fill { height: 100%; background: var(--accent); }
+.stage-list, .missable-list { list-style: none; padding: 0; display: grid; gap: 6px; }
+.stage-list li, .missable-list li {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--panel);
+}
+.stage-list li.earned, .missable-list li.earned { opacity: 0.75; }
+.stage-list a, .missable-list a, .next-list a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text);
+  text-decoration: none;
+}
+.next-list li { margin-bottom: 16px; }
+.setting-row { display: block; margin: 12px 0; }
+button.danger { border-color: var(--accent); margin-top: 16px; }

@@ -1,0 +1,20 @@
+/* Leonida Platinum Guide — themes. Paper (light) and night (dark),
+ * one coral accent each, after the house engine's look. */
+:root, html[data-theme="paper"] {
+  --bg: #f6f3ee;
+  --panel: #ffffff;
+  --text: #1d2129;
+  --muted: #626a75;
+  --border: #d8d2c8;
+  --accent: #d24e2a;
+  --warn-bg: #fdf0e6;
+}
+html[data-theme="night"] {
+  --bg: #0f1218;
+  --panel: #171c24;
+  --text: #edeae4;
+  --muted: #8e96a3;
+  --border: #2c3442;
+  --accent: #ff6b4a;
+  --warn-bg: #2a1f1a;
+}
